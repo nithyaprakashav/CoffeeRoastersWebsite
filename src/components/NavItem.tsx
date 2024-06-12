@@ -31,12 +31,16 @@ const NavItem = ({category,handleOpen,isAnyOpen,isOpen}: NavItemsProps) => {
 
             {isOpen ? (
                 <div className={cn('absolute inset-x-0 top-full text-sm text-muted-foreground',{
-                    ' animate-in fade-in-10 slide-in-from-top-5':!isAnyOpen
+                    ' animate-in  duration-700 slide-in-from-top-5 z-0':isAnyOpen
+                },{
+                    ' animate-in duration-700 slide-out-to-top-0 ':!isAnyOpen
                 })} >
-                    <div className=" absolute inset-0 top-1/2 bg-white shadow" aria-hidden='true' />
+                    <div className=" absolute inset-0 top-1/2 bg-white shadow " aria-hidden='true' />
 
-                    <div className="relative bg-white" >
-                        <div className=" mx-auto max-w-7xl px-0" >
+                    <div className="relative rounded-bl-3xl rounded-br-3xl" style={{
+                        backgroundColor: '#d0b49f'
+                    }} >
+                        <div className=" mx-auto max-w-7xl px-0 " >
                             <div className=" grid grid-cols-4 gap-x-8 gap-y-10 py-16" >
                                 <div className=" col-span-4 col-start-1 grid grid-cols-3 gap-x-8" >
                                     {category.featured.map((item)=>(

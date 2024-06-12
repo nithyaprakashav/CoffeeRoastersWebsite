@@ -6,17 +6,17 @@ export const PRODUCT_CATEGORIES = [
             {
                 name: "What we prefer",
                 href:"#",
-                imageSrc:"/nav/roasted-beans/"
+                imageSrc:"/nav/roasted-beans/coffeeBeans.png"
             },
             {
                 name: "New products",
                 href:"#",
-                imageSrc:"/nav/roasted-beans/"
+                imageSrc:"/nav/roasted-beans/coffeeBeans2.png"
             },
             {
                 name: "Flavour rich beans",
                 href:"#",
-                imageSrc:"/nav/roasted-beans/"
+                imageSrc:"/nav/roasted-beans/coffeeBeans.png"
             },
         ]
     },
@@ -27,17 +27,17 @@ export const PRODUCT_CATEGORIES = [
             {
                 name: "What we prefer",
                 href:"#",
-                imageSrc:"/nav/coffee-powders/"
+                imageSrc:"/nav/coffee-powders/coffeePowder.png"
             },
             {
                 name: "New products",
                 href:"#",
-                imageSrc:"/nav/coffee-powders/"
+                imageSrc:"/nav/coffee-powders/coffeePowder2.png"
             },
             {
                 name: "Flavour focused",
                 href:"#",
-                imageSrc:"/nav/coffee-powders/"
+                imageSrc:"/nav/coffee-powders/coffeePowder.png"
             },
         ]
     },
