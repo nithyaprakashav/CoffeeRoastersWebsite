@@ -10,19 +10,21 @@ import Link from "next/link";
 import {useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
 import { z } from "zod";
+import { AuthCredentialValidator, TAuthCredentialValidator } from "@/lib/validators/account-credentials-validator";
 
 const Page = () => {
 
   //from zod
-  const AuthCredentialValidator = z.object({
-    email: z.string().email(),
-    password: z.string().min(8 , {message: "Password must be atleast 8 characters long"})
-  })
+  
 
   // From react-hook-form
-    const {register , handleSubmit , formState:{errors}} = useForm({
+    const {register , handleSubmit , formState:{errors}} = useForm<TAuthCredentialValidator>({
       resolver: zodResolver(AuthCredentialValidator)
     })
+
+    const onSubmit = ({email , password}: TAuthCredentialValidator) => {
+      // send data to the server
+    }
 
     return ( 
         <>
@@ -44,18 +46,22 @@ const Page = () => {
                     </div>
 
                     <div className=" grid gap-6" >
-                      <form  >
+                      <form onSubmit={handleSubmit(onSubmit)} >
                         <div className=" grid gap-2" >
                           <div className=" grid gap-2 py-2" > 
                             <Label htmlFor="email" >Email</Label>
-                            <Input className={cn({
-                              "focus-visible:ring-red-500": true
+                            <Input 
+                            {...register("email")}
+                            className={cn({
+                              "focus-visible:ring-red-500": errors.email
                             })} placeholder="you@example.com" />
                           </div>
                           <div className=" grid gap-2 py-2" > 
                             <Label htmlFor="password" >Password</Label>
-                            <Input className={cn({
-                              "focus-visible:ring-red-500": true
+                            <Input 
+                            {...register("password")}
+                            className={cn({
+                              "focus-visible:ring-red-500": errors.password
                             })} placeholder="h2d3seijf" />
                           </div>
 
