@@ -1,6 +1,6 @@
-import { AuthCredentialValidator } from "@/lib/validators/account-credentials-validator";
+import { AuthCredentialValidator } from "../lib/validators/account-credentials-validator";
 import { publicProcedure, router } from "./trpc";
-import { getPayloadClient } from "@/get-payload";
+import { getPayloadClient } from "../get-payload";
 import { TRPCError } from "@trpc/server";
 
 export const authRouter = router({
@@ -23,9 +23,13 @@ export const authRouter = router({
         await payload.create({
             collection: "users",
             data: {
-                
+                email:email,
+                password:password,
+                role:"user"
             }
         })
+
+        return {success: true , sentToEmail: email}
 
     })
 })
