@@ -32,7 +32,7 @@ const NavItem = ({category,handleOpen,isAnyOpen,isOpen,setActiveIndex}: NavItems
 
     return ( 
         <div className="flex" >
-            <div className="flex relative items-center" onMouseEnter={handleOpen}>
+            <div className="flex relative items-center" onClick={handleOpen}>
                 <Button className=" gap-1.5" variant={isOpen ? 'secondary' : 'ghost'} >
                     {category.label}
                     <ChevronDown className={cn("h-4 w-4 transition-all text-muted-foreground",{
