@@ -1,7 +1,10 @@
+'use client'
+
 import MaxWidthWrapper from "@/components/MaxWidthWrapper"
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CheckCircle, Leaf, Truck } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 const perks = [
@@ -21,7 +24,31 @@ const perks = [
     description: "The coffee beans are roasted by us to a desired temperature extracting the flavour right after we get the orders."
   },
 ]
+
+const words = [
+  {
+    text: "The",
+  },
+  {
+    text: "elixr",
+    className: "text-red-700 dark:text-red-700"
+  },
+  {
+    text: "of",
+  },
+  {
+    text: "modern",
+  },
+  {
+    text: "Times.",
+  },
+];
+
 export default function Home() {
+
+  const router = useRouter()
+  router.refresh()
+
   return (
     <>
     
