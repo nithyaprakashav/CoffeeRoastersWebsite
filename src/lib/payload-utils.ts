@@ -4,9 +4,9 @@ import { NextRequest } from "next/server"
 
 
 export const getServerSideUser = async (
-    cookies: NextRequest["cookies"] | ReadonlyRequestCookies
+    cookies: NextRequest['cookies'] | ReadonlyRequestCookies
 ) => {
-   const token = cookies.get("payload-token")?.value
+   const token = cookies.get('payload-token')?.value
 
    const meRes = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/me`,{
         headers: {
@@ -15,6 +15,8 @@ export const getServerSideUser = async (
    })
 
    const {user} = (await meRes.json()) as {user: User | null}
+
+   console.log(user , "Signed in user")
 
    return { user}
 }

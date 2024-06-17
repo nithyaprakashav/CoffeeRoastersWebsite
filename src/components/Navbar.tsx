@@ -1,23 +1,23 @@
 // from aceternity
 
-
-
-import Link from "next/link";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import Image from "next/image";
-import { url } from "inspector";
-import NavItems from "./NavItems";
-import { buttonVariants } from "./ui/button";
-import NavItem from "./NavItem";
-import Cart from "./Cart";
 import { getServerSideUser } from "@/lib/payload-utils";
 import { cookies } from "next/headers";
+import Image from "next/image";
+import Link from "next/link";
+import Cart from "./Cart";
+import NavItems from "./NavItems";
 import UserAccountNav from "./UserAccountNav";
+import { buttonVariants } from "./ui/button";
 
 const Navbar = async () => {
 
     const nextCookies = cookies()
     const {user} = await getServerSideUser(nextCookies)
+    
+
+    // console.log(user)
+    
+   
 
 
 
@@ -59,11 +59,11 @@ const Navbar = async () => {
                                         <span className=" h-6 w-px bg-gray-200" aria-hidden= 'true'  />
                                     )}
 
-                                    {user ? <UserAccountNav/> : <Link href='/sign-up' className={buttonVariants({variant: 'ghost'})} >
+                                    {user ? <UserAccountNav user={user}/> : <Link href='/sign-up' className={buttonVariants({variant: 'ghost'})} >
                                         Create account
                                     </Link> }
 
-                                    {user ? <span className=" h-6 w-px bg-gray-200" aria-hidden= 'true'  /> : null}
+                                    {user ? <span className=" h-6 w-px bg-gray-500" aria-hidden= 'true'  /> : null}
 
                                     {user ? null : <div className=" flex lg:ml-6" >
                                         <span className=" h-6 w-px bg-gray-200" aria-hidden= 'true'  />
