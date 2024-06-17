@@ -27,11 +27,17 @@ const UserAccountNav = ({user}: {user: User}) => {
 
                 <DropdownMenuSeparator/>
 
-                <DropdownMenuItem asChild className=" cursor-pointer" >
-                    <Link href='/admin' >Admin dashboard</Link>
-                </DropdownMenuItem>
+                {user.role === 'admin' ? (
+                    <>
+                    
+                    <DropdownMenuItem asChild className=" cursor-pointer" >
+                        <Link href='/admin' >Admin dashboard</Link>
+                    </DropdownMenuItem>
 
-                <DropdownMenuSeparator/>
+                    <DropdownMenuSeparator/>
+                    </>
+                ) : null}
+                
 
                 <DropdownMenuItem className=" cursor-pointer" onClick={signOut} >
                 <LogOut className="mr-2 h-4 w-4" />
