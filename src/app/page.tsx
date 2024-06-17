@@ -1,10 +1,9 @@
-'use client'
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper"
+
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CheckCircle, Leaf, Truck } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 
 const perks = [
@@ -46,8 +45,7 @@ const words = [
 
 export default function Home() {
 
-  const router = useRouter()
-  router.refresh()
+  
 
   return (
     <>

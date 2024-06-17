@@ -56,17 +56,18 @@ const Navbar = async () => {
                                     )}
 
                                     {user ? null : (
-                                        <span className=" h-6 w-px bg-gray-200" aria-hidden= 'true'  />
+                                        <span className=" h-6 w-px bg-gray-500" aria-hidden= 'true'  />
                                     )}
 
-                                    {user ? <UserAccountNav user={user}/> : <Link href='/sign-up' className={buttonVariants({variant: 'ghost'})} >
+                                    {user ? 
+                                    (<UserAccountNav user={user}/>) : (<Link href='/sign-up' className={buttonVariants({variant: 'ghost'})} >
                                         Create account
-                                    </Link> }
+                                    </Link> )}
 
                                     {user ? <span className=" h-6 w-px bg-gray-500" aria-hidden= 'true'  /> : null}
 
                                     {user ? null : <div className=" flex lg:ml-6" >
-                                        <span className=" h-6 w-px bg-gray-200" aria-hidden= 'true'  />
+                                        <span className=" h-6 w-px bg-gray-500" aria-hidden= 'true'  />
                                     </div> }
 
                                     <div className=" ml-4 flow-root lg:ml-6" >

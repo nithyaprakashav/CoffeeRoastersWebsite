@@ -16,7 +16,7 @@ export const getServerSideUser = async (
 
    const {user} = (await meRes.json()) as {user: User | null}
 
-   console.log(user , "Signed in user")
+//    console.log(user , "Signed in user")
 
    return { user}
 }
